@@ -1,0 +1,28 @@
+{
+	"servers": {
+		"SPOTIFY-MCP": {
+			"type": "stdio",
+			"command": "node",
+			"args": [
+				"build/index.js"
+			],
+			"env": {
+				"SPOTIFY_CLIENT_ID": "${input:spotify-client-id}",
+				"SPOTIFY_CLIENT_SECRET": "${input:spotify-client-secret}"
+			}
+		}
+	},
+	"inputs": [
+		{
+			"type": "promptString",
+			"id": "spotify-client-id",
+			"description": "Spotify app client ID"
+		},
+		{
+			"type": "promptString",
+			"id": "spotify-client-secret",
+			"description": "Spotify app client secret",
+			"password": true
+		}
+	]
+}
